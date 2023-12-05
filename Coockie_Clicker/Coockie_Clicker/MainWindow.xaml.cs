@@ -20,6 +20,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.IO;
+using System.Reflection;
 
 namespace Coockie_Clicker
 {
@@ -28,6 +30,7 @@ namespace Coockie_Clicker
     /// </summary>
     public partial class MainWindow : Window
     {
+
         // Classes, Models
         Models.Cursor CursorClass = new Models.Cursor();
         Farm FarmClass = new Farm();
@@ -42,6 +45,7 @@ namespace Coockie_Clicker
 
         // Timer
         private DispatcherTimer timer;
+        private DispatcherTimer goldenCookieTimer;
 
         public MainWindow() // Werkt is timing van 10 Milliseconden
         {
@@ -55,11 +59,20 @@ namespace Coockie_Clicker
             BtnBank.Visibility = Visibility.Hidden;
             BtnTemple.Visibility = Visibility.Hidden;
 
+
+            // Timer Tick Voor de Rest van het programma
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(10);
 
             timer.Tick += Timer_Tick;
             timer.Start();
+
+            //Timer Tick Voor golden Coockie
+            goldenCookieTimer = new DispatcherTimer();
+            goldenCookieTimer.Interval = TimeSpan.FromMinutes(1);
+
+            goldenCookieTimer.Tick += GoldenCookieTimer_Tick;
+            goldenCookieTimer.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e) // Werkt
@@ -73,6 +86,57 @@ namespace Coockie_Clicker
             UpdateButtonEnabledState(BtnFarm, FarmClass.Prijs);
             UpdateButtonEnabledState(BtnMine, MineClass.Prijs);
             UpdateButtonEnabledState(BtnFactory, FactoryClass.Prijs);
+        }
+
+        private void GoldenCookieTimer_Tick(object sender, EventArgs e) // Werkt
+        {
+            if (new Random().Next(100) < 30) // 30 procent kans
+            {
+                ShowGoldenCookie();
+            }
+        }
+
+        private void ShowGoldenCookie() // Werkt
+        {
+            // Code om een gouden koekje weer te geven
+            double left = new Random().Next((int)ActualWidth);
+            double top = new Random().Next((int)ActualHeight);
+
+            // aanmaken van golden cookie
+            Image Goldencookie = new Image
+            {
+                Source = new BitmapImage(new Uri("C:\\Users\\Gebruiker\\Documents\\GitHub\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Golden_cookie.png")),
+                Width = 20,
+                Height = 20,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(left, top, 0, 0)
+            };
+
+            Goldencookie.MouseDown += Goldencookie_MouseDown;
+
+            // Voeg het gouden koekje toe aan het scherm
+            cookie_Grid.Children.Add(Goldencookie);
+
+            // animatie 
+            DoubleAnimation animation = new DoubleAnimation(1.0, 0.0, TimeSpan.FromSeconds(5));
+            Goldencookie.BeginAnimation(OpacityProperty, animation);
+        }
+
+        private void Goldencookie_MouseDown(object sender, MouseButtonEventArgs e) // Werkt
+        {
+            double cookieValue = CalculateCookieValue();
+
+            Score += cookieValue; // nieuwe scoren
+            cookie_Grid.Children.Remove(sender as UIElement); // delete golden cookie
+        }
+
+        private double CalculateCookieValue() // Werkt
+        {
+            double Totaalincome = Convert.ToDouble(LbIncome.Content); // Huidige hoeveelheid
+
+            double TotaalincomeNa15Min = Totaalincome * 15 * 60; // Bereken het bedrag na 15 minuten
+            return TotaalincomeNa15Min;
         }
 
         private void UpdateCounterText() // Werkt
@@ -344,7 +408,7 @@ namespace Coockie_Clicker
             CursorClass.GekockteCursor();
             CursorClass.PrijsVerhogen();
 
-            stackpanelImage(SkpCursor, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Cursor.png");
+            stackpanelImage(SkpCursor, "C:\\Users\\Gebruiker\\Documents\\GitHub\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Cursor.png");
             UpdateButtonEnabledState(BtnCursor, Prijs);
             UpdateLabelContent(Prijs, income);
         }
@@ -428,5 +492,6 @@ namespace Coockie_Clicker
             UpdateButtonEnabledState(BtnTemple, Prijs);
             UpdateLabelContent(Prijs, income);
         }
+
     }
 }
