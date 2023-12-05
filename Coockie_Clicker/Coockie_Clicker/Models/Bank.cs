@@ -10,12 +10,15 @@ namespace Coockie_Clicker.Models
     {
         public int Teller { get; set; }
         public double Prijs { get; set; }
+
+        public double PrijsBonus { get; set; }
         public bool CursorButtonVisible { get; set; }
 
         public Bank()
         {
-            Teller = 0;
+            Teller = 1;
             Prijs = 1400000;
+            PrijsBonus = 1400000;
             CursorButtonVisible = false;
         }
 
@@ -23,8 +26,12 @@ namespace Coockie_Clicker.Models
         {
             Prijs = Prijs * Math.Pow(1.15, Teller);
         }
+        public void PrijsVerhogenBonus()
+        {
+            PrijsBonus = Prijs * Math.Pow(10, 2 + 3 * Teller);
+        }
 
-        public void GekockteBank()
+        public void GekockteBonusBank()
         {
             Teller++;
         }

@@ -27,6 +27,14 @@
                         <TextBlock Text="Cursor" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
+                
+                <Button x:Name="BtnCursorBonus" Height="30" Background="Gold" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14" Click="BtnCursorBonus_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbCursorMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="50" FontSize="10"/>
+                        <Label x:Name="LbPrijsCursorBonus" Content="15" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Cursor" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
 
                 <!-- Button 2: Grandma -->
                 <Button x:Name="BtnGrandma" Height="60" Click="BtnGrandma_Click" Background="#FF00EEF3" IsEnabled="False" FontWeight="Bold" FontStyle="Italic" FontSize="14">
@@ -37,6 +45,14 @@
                         <TextBlock Text="Grandma" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
+                <Button x:Name="BtnGrandmaBonus" Height="30" Background="Gold" FontStyle="Italic" FontWeight="Bold" FontSize="14" Click="BtnGrandmaBonus_Click" IsEnabled="False">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbGrandmaMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="45" FontSize="10"/>
+                        <Label x:Name="LbPrijsGrandmaBonus" Content="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Grandma" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
+
 
                 <!-- Button 3: Farm -->
                 <Button x:Name="BtnFarm" Height="60" Click="BtnFarm_Click" Background="#FF00EEF3" IsEnabled="False" FontWeight="Bold" FontStyle="Italic" FontSize="14">
@@ -45,6 +61,13 @@
                         <Label x:Name="LbPrijsFarm" Content="1100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="44" Width="89" FontSize="12"/>
                         <Label Content="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="48" FontSize="12"/>
                         <TextBlock Text="Farm" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="BtnFarmBonus" Height="30" Background="Gold" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14" Click="BtnFarmBonus_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbFarmMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="50" FontSize="10"/>
+                        <Label x:Name="LbPrijsFarmBonus" Content="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Farm" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
 
@@ -57,6 +80,13 @@
                         <TextBlock Text="Mine" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
+                <Button x:Name="BtnMineBonus" Height="30" Click="BtnMineBonus_Click" Background="Gold" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbMineMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="50" FontSize="10"/>
+                        <Label x:Name="LbPrijsMineBonus" Content="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Mine" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
 
                 <!-- Button 5: Factory -->
                 <Button x:Name="BtnFactory" Height="60" Click="BtnFactory_Click" Background="#FF00EEF3" IsEnabled="False" FontWeight="Bold" FontStyle="Italic" FontSize="14">
@@ -65,6 +95,13 @@
                         <Label x:Name="LbPrijsFactory" Content="130000" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="44" Width="89" FontSize="12"/>
                         <Label Content="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="48" FontSize="12"/>
                         <TextBlock Text="Factory" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="BtnFactoryBonus" Height="30" Click="BtnFactoryBonus_Click" Background="Gold" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbFactoryMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="50" FontSize="10"/>
+                        <Label x:Name="LbPrijsFactoryBonus" Content="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Factory" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
 
@@ -77,6 +114,13 @@
                         <TextBlock Text="Bank" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
+                <Button x:Name="BtnBankBonus" Height="30" Click="BtnBankBonus_Click" Background="Gold" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbBankMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="50" FontSize="10"/>
+                        <Label x:Name="LbPrijsBankBonus" Content="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Bank" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
 
                 <!-- Button 7: Temple -->
                 <Button x:Name="BtnTemple" Click="BtnTemple_Click" Background="#FF00EEF3" IsEnabled="False" FontWeight="Bold" FontStyle="Italic" FontSize="14">
@@ -85,6 +129,13 @@
                         <Label x:Name="LbPrijsTemple" Content="0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="44" Width="89" FontSize="12"/>
                         <Label Content="7.800" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="48" FontSize="12"/>
                         <TextBlock Text="Temple" Margin="5,0,0,0" Width="102" Height="34" FontSize="16" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="BtnTempleBonus" Height="30" Click="BtnTempleBonus_Click" Background="Gold" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14">
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="LbTempelMulti" Content="X1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="50" FontSize="10"/>
+                        <Label x:Name="LbPrijsTempleBonus" Content="100" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="89" FontSize="10"/>
+                        <TextBlock Text="Bonus Temple" Margin="5,0,0,0" Width="102" Height="24" FontSize="14" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -109,7 +160,7 @@
 
         <Label x:Name="LbCoockie" Content="Cookies:" HorizontalAlignment="Left" Margin="212,27,0,0" VerticalAlignment="Top" Width="90" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False" Grid.Column="1" Height="37"/>
         <Label x:Name="LbCounter" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="303,30,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F1}" Grid.Column="1"/>
-        <Label x:Name="Lbshop" Content="Store:" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Height="123" Width="243" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20" Grid.ColumnSpan="2"/>
+        <Label x:Name="Lbshop" Content="Store / Bonus Store:" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Height="123" Width="243" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20" Grid.ColumnSpan="2"/>
         <Label x:Name="LbIncome" Height="auto" Width="auto" Content="Pasive Income: " HorizontalAlignment="Left" Margin="218,79,0,0" VerticalAlignment="Top" Foreground="White" ContentStringFormat="{}{0:F3}" Grid.Column="1"/>
         <Label x:Name="LbClicked" Content="Cookies Clicked: " HorizontalAlignment="Left" Margin="434,16,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Grid.Column="1" Height="34" Width="143"/>
         <Label x:Name="LbUpgrades" Content="Upgrades Bought:" HorizontalAlignment="Left" Margin="580,17,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Grid.Column="1" Height="34" Width="153"/>
@@ -118,6 +169,7 @@
         <Label x:Name="LbUpgrades_Text" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="585,48,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}" Grid.Column="1"/>
         <Label x:Name="LbClicked_Text" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="436,50,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}" Grid.Column="1"/>
         <Label x:Name="LbName" Content="PXL-Bakery" HorizontalAlignment="Left" Margin="275,4,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" MouseDown="LbName_MouseDown" Grid.Column="1" Height="auto" Width="auto"/>
-        <Button x:Name="Btn_Achievements" Grid.Column="1" Content="Achievements" HorizontalAlignment="Left" Margin="225,383,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.035,-0.015" Height="32" Width="90" Background="#FFFDF300" Click="Btn_Achievements_Click"/>
+        <Button x:Name="Btn_Achievements" Grid.Column="1" Content="Achievements" HorizontalAlignment="Left" Margin="233,382,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.035,-0.015" Height="36" Width="95" Background="White" Click="Btn_Achievements_Click"/>
+        <Button x:Name="BtnBonusStore" Grid.Column="1" Content="Bonus Store" HorizontalAlignment="Left" Margin="343,382,0,0" VerticalAlignment="Top" Height="33" Width="88" Background="White"/>
     </Grid>
 </Window>

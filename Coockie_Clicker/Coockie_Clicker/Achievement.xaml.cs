@@ -45,8 +45,9 @@ namespace Coockie_Clicker
             // gaat elke 10 miliseconden alles visual updaten van de client.
             ControleerAchievements();
         }
-        private void ControleerAchievements() // Maak hier nog 9 meer achievements
+        private void ControleerAchievements() 
         {
+            
             if(coockies_Clicked.IsUnlocked == true)
             {
                 skp_Cookie_Clicked.Background = new SolidColorBrush(Colors.LightCyan);

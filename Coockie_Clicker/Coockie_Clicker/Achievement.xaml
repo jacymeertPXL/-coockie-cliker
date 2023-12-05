@@ -22,7 +22,7 @@
                     <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel x:Name="skp_Cookie_Clicked" Orientation="Horizontal" Background="#FFAF7272" Margin="10">
+            <StackPanel x:Name="skp_Cookie_Clicked" Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
                 <Image  Width="50" Height="50" Margin="0,0,10,0" />
 
@@ -72,7 +72,7 @@
                     <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Background="LightGray" Margin="10">
+            <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
                 <Image  Width="50" Height="50" Margin="0,0,10,0" />
 
@@ -82,7 +82,7 @@
                     <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Background="LightGray" Margin="10">
+            <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
                 <Image  Width="50" Height="50" Margin="0,0,10,0" />
 
@@ -92,7 +92,7 @@
                     <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Background="LightGray" Margin="10">
+            <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
                 <Image  Width="50" Height="50" Margin="0,0,10,0" />
 
@@ -102,7 +102,7 @@
                     <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Background="LightGray" Margin="10">
+            <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
                 <Image  Width="50" Height="50" Margin="0,0,10,0" />
 

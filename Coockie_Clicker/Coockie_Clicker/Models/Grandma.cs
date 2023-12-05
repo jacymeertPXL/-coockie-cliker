@@ -10,12 +10,14 @@ namespace Coockie_Clicker.Classes
     {
         public int Teller { get; set; }
         public double Prijs { get; set; }
+        public double PrijsBonus { get; set; }
         public bool CursorButtonVisible { get; set; }
 
         public Grandma()
         {
-            Teller = 0;
-            Prijs = 100; 
+            Teller = 1;
+            Prijs = 100;
+            PrijsBonus = 100;
             CursorButtonVisible = false;
         }
 
@@ -24,7 +26,12 @@ namespace Coockie_Clicker.Classes
             Prijs = Prijs * Math.Pow(1.15, Teller);
         }
 
-        public void GekockteGrandma()
+        public void PrijsVerhogenBonus()
+        {
+            PrijsBonus = Prijs * Math.Pow(10, 2 + 3 * Teller);
+        }
+
+        public void GekockteBonusGrandma()
         {
             Teller++;
         }

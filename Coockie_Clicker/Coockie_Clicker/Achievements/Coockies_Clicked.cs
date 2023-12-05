@@ -16,5 +16,9 @@ namespace Coockie_Clicker.Achievements
             RequiredCookies = 20;
             IsUnlocked = false;
         }
+        public void BoolChange()
+        {
+            IsUnlocked = true;
+        }
     }
 }
