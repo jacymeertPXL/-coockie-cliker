@@ -43,3 +43,6 @@ C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clic
 C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clicker\obj\Debug\Coockie_Clicker.csproj.CoreCompileInputs.cache
 C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clicker\obj\Debug\Coockie_Clicker.exe
 C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clicker\obj\Debug\Coockie_Clicker.pdb
+C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clicker\obj\Debug\Achievement.g.cs
+C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clicker\obj\Debug\Coockie_Clicker_MarkupCompile.lref
+C:\Users\Gebruiker\Documents\GitHub\-coockie-cliker\Coockie_Clicker\Coockie_Clicker\obj\Debug\Achievement.baml

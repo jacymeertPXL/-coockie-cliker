@@ -1,5 +1,6 @@
 ﻿using Coockie_Clicker.Classes;
 using Coockie_Clicker.Models;
+using Coockie_Clicker.Achievements;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -30,6 +31,8 @@ namespace Coockie_Clicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Classes, Achievements
+        Coockie_Clicker.Achievements.Coockies_Clicked coockies_Clicked = new Coockie_Clicker.Achievements.Coockies_Clicked();
 
         // Classes, Models
         Models.Cursor CursorClass = new Models.Cursor();
@@ -80,7 +83,8 @@ namespace Coockie_Clicker
             // gaat elke 10 miliseconden alles visual updaten van de client.
             UpdateCounterText();
             UpdateScoreText();
-            UpdateInvestmentButtonVisibility();
+            UpdateInvestmentButtonVisibility(); 
+            ControleerAchievements();
             UpdateButtonEnabledState(BtnCursor, CursorClass.Prijs);
             UpdateButtonEnabledState(BtnGrandma, GrandmaClass.Prijs);
             UpdateButtonEnabledState(BtnFarm, FarmClass.Prijs);
@@ -93,6 +97,15 @@ namespace Coockie_Clicker
             if (new Random().Next(100) < 30) // 30 procent kans
             {
                 ShowGoldenCookie();
+            }
+        }
+
+        private void ControleerAchievements() // Maak hier nog 9 meer achievements
+        {
+            // achievements Coockie Clicked
+            if (Clicked == coockies_Clicked.RequiredCookies)
+            {
+                coockies_Clicked.IsUnlocked = true;
             }
         }
 
@@ -491,6 +504,12 @@ namespace Coockie_Clicker
             stackpanelImage(SkpTemple, "");
             UpdateButtonEnabledState(BtnTemple, Prijs);
             UpdateLabelContent(Prijs, income);
+        }
+
+        private void Btn_Achievements_Click(object sender, RoutedEventArgs e)
+        {
+            Achievement achievements = new Achievement();
+            achievements.Show();
         }
 
     }
