@@ -8,6 +8,7 @@ namespace Coockie_Clicker.Classes
 {
     internal class Grandma
     {
+        public int Gekocht { get; set; }
         public int Teller { get; set; }
         public double Prijs { get; set; }
         public double PrijsBonus { get; set; }
@@ -15,7 +16,8 @@ namespace Coockie_Clicker.Classes
 
         public Grandma()
         {
-            Teller = 1;
+            Gekocht = 0;
+            Teller = 2;
             Prijs = 100;
             PrijsBonus = 100;
             CursorButtonVisible = false;
@@ -28,7 +30,8 @@ namespace Coockie_Clicker.Classes
 
         public void PrijsVerhogenBonus()
         {
-            PrijsBonus = Prijs * Math.Pow(10, 2 + 3 * Teller);
+            double factor = (double)Math.Pow(10, Teller - 2);
+            PrijsBonus = Prijs * factor;
         }
 
         public void GekockteBonusGrandma()

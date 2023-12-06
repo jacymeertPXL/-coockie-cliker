@@ -159,6 +159,7 @@
         </StackPanel>
 
         <Label x:Name="LbCoockie" Content="Cookies:" HorizontalAlignment="Left" Margin="212,27,0,0" VerticalAlignment="Top" Width="90" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False" Grid.Column="1" Height="37"/>
+        <Label x:Name="LbCoockie" Content="Cookies:" HorizontalAlignment="Left" Margin="212,27,0,0" VerticalAlignment="Top" Width="90" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False" Grid.Column="1" Height="37"/>
         <Label x:Name="LbCounter" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="303,30,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F1}" Grid.Column="1"/>
         <Label x:Name="Lbshop" Content="Store / Bonus Store:" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Height="123" Width="243" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20" Grid.ColumnSpan="2"/>
         <Label x:Name="LbIncome" Height="auto" Width="auto" Content="Pasive Income: " HorizontalAlignment="Left" Margin="218,79,0,0" VerticalAlignment="Top" Foreground="White" ContentStringFormat="{}{0:F3}" Grid.Column="1"/>
@@ -169,7 +170,6 @@
         <Label x:Name="LbUpgrades_Text" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="585,48,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}" Grid.Column="1"/>
         <Label x:Name="LbClicked_Text" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="436,50,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}" Grid.Column="1"/>
         <Label x:Name="LbName" Content="PXL-Bakery" HorizontalAlignment="Left" Margin="275,4,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" MouseDown="LbName_MouseDown" Grid.Column="1" Height="auto" Width="auto"/>
-        <Button x:Name="Btn_Achievements" Grid.Column="1" Content="Achievements" HorizontalAlignment="Left" Margin="233,382,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.035,-0.015" Height="36" Width="95" Background="White" Click="Btn_Achievements_Click"/>
-        <Button x:Name="BtnBonusStore" Grid.Column="1" Content="Bonus Store" HorizontalAlignment="Left" Margin="343,382,0,0" VerticalAlignment="Top" Height="33" Width="88" Background="White"/>
+        <Button x:Name="Btn_Achievements" Grid.Column="1" Content="Achievements" HorizontalAlignment="Left" Margin="292,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.035,-0.015" Height="36" Width="95" Background="White" Click="Btn_Achievements_Click"/>
     </Grid>
 </Window>

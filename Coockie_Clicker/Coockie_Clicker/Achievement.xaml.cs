@@ -34,6 +34,7 @@ namespace Coockie_Clicker
             // Timer Tick Voor de Rest van het programma
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(10);
+            timer.Interval = TimeSpan.FromMilliseconds(10);
 
             timer.Tick += Timer_Tick;
             timer.Start();

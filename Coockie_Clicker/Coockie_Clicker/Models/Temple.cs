@@ -8,6 +8,7 @@ namespace Coockie_Clicker.Models
 {
     internal class Temple
     {
+        public int Gekocht { get; set; } 
         public int Teller { get; set; }
         public double Prijs { get; set; }
         public double PrijsBonus { get; set; }
@@ -15,7 +16,8 @@ namespace Coockie_Clicker.Models
 
         public Temple()
         {
-            Teller = 1;
+            Gekocht = 0;
+            Teller = 2;
             Prijs = 20000000;
             PrijsBonus = 20000000;
             CursorButtonVisible = false;
@@ -28,7 +30,8 @@ namespace Coockie_Clicker.Models
 
         public void PrijsVerhogenBonus()
         {
-            PrijsBonus = Prijs * Math.Pow(10, 2 + 3 * Teller);
+            double factor = (double)Math.Pow(10, Teller - 2);
+            PrijsBonus = Prijs * factor;
         }
 
         public void GekockteBonusTemple()

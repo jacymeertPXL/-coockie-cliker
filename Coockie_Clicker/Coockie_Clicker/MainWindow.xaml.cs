@@ -44,7 +44,7 @@ namespace Coockie_Clicker
         Temple TempleClass = new Temple();
 
         // Variable
-        private double Score, Income, Clicked, Bought, Used, prijsbonus, MultiBonus;
+        private double Score, Income, Clicked, Bought, Used;
 
         // Timer
         private DispatcherTimer timer;
@@ -61,6 +61,7 @@ namespace Coockie_Clicker
 
             timer.Tick += Timer_Tick;
             timer.Start();
+
 
             //Timer Tick Voor golden Coockie
             goldenCookieTimer = new DispatcherTimer();
@@ -207,7 +208,7 @@ namespace Coockie_Clicker
             LbPrijsTemple.Content = FormaatGrootGetal_Prijs(TempleClass.Prijs);
 
             // Labels Prijs Bonus Store
-            LbPrijsCursor.Content = FormaatGrootGetal_Prijs(CursorClass.PrijsBonus);
+            LbPrijsCursorBonus.Content = FormaatGrootGetal_Prijs(CursorClass.PrijsBonus);
             LbPrijsGrandmaBonus.Content = FormaatGrootGetal_Prijs(GrandmaClass.PrijsBonus);
             LbPrijsFarmBonus.Content = FormaatGrootGetal_Prijs(FarmClass.PrijsBonus);
             LbPrijsMineBonus.Content = FormaatGrootGetal_Prijs(MineClass.PrijsBonus);
@@ -461,6 +462,14 @@ namespace Coockie_Clicker
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
             }
         }
+        public void UpdateIncome(double income, double teller, double gekocht)
+        {
+            double nieuweIncome = teller * (gekocht * income);
+            double nieuweIncomeAfnemen = gekocht * income;
+
+            Income -= nieuweIncomeAfnemen;
+            Income += nieuweIncome;
+        }
 
         //private void Class_Button_Click(object obj, Button button, double income)
         //{
@@ -481,6 +490,7 @@ namespace Coockie_Clicker
         //    UpdateButtonEnabledState(button, prijs);
         //    UpdateLabelContent(prijs, income);
         //}
+
         private void BtnCursor_Click(object sender, RoutedEventArgs e)
         {
 
@@ -488,10 +498,11 @@ namespace Coockie_Clicker
 
             double Prijs = (double)CursorClass.Prijs;
             double income = 0.001;
-            
+
+            CursorClass.Gekocht++;
             CursorClass.PrijsVerhogen();
 
-            stackpanelImage(SkpCursor, "C:\\Users\\12200178\\Desktop\\C#\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Cursor.png");
+            stackpanelImage(SkpCursor, "C:\\Users\\Gebruiker\\Documents\\GitHub\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Cursor.png");
             UpdateButtonEnabledState(BtnCursor, Prijs);
             UpdateLabelContent(Prijs, income);
         }
@@ -499,6 +510,8 @@ namespace Coockie_Clicker
         private void BtnCursorBonus_Click(object sender, RoutedEventArgs e)
         {
             double BonusPrijs = (double)CursorClass.PrijsBonus;
+
+            UpdateIncome(0.001, CursorClass.Teller, CursorClass.Gekocht);
 
             CursorClass.PrijsVerhogenBonus();
             CursorClass.GekockteBonusCursor();
@@ -513,6 +526,7 @@ namespace Coockie_Clicker
             double Prijs = (double)GrandmaClass.Prijs;
             double income = 0.01;
 
+            GrandmaClass.Gekocht++;
             GrandmaClass.PrijsVerhogen();
 
             stackpanelImage(SkpGrandma, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Grandma.png");
@@ -523,6 +537,8 @@ namespace Coockie_Clicker
         private void BtnGrandmaBonus_Click(object sender, RoutedEventArgs e)
         {
             double BonusPrijs = (double)GrandmaClass.PrijsBonus;
+
+            UpdateIncome(0.01, GrandmaClass.Teller, GrandmaClass.Gekocht);
 
             GrandmaClass.PrijsVerhogenBonus();
             GrandmaClass.GekockteBonusGrandma();
@@ -536,6 +552,7 @@ namespace Coockie_Clicker
             double Prijs = (double)FarmClass.Prijs;
             double income = 0.08;
 
+            FarmClass.Gekocht++;
             FarmClass.PrijsVerhogen();
 
             stackpanelImage(SkpFarm, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Farm.png");
@@ -548,6 +565,8 @@ namespace Coockie_Clicker
         {
             double BonusPrijs = (double)FarmClass.PrijsBonus;
 
+            UpdateIncome(0.08, FarmClass.Teller, FarmClass.Gekocht);
+
             FarmClass.PrijsVerhogenBonus();
             FarmClass.GekockteBonusFarm();
 
@@ -559,6 +578,7 @@ namespace Coockie_Clicker
             double Prijs = (double)MineClass.Prijs;
             double income = 0.47;
 
+            MineClass.Gekocht++;
             MineClass.PrijsVerhogen();
 
             stackpanelImage(SkpMine, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Mine.png");
@@ -569,6 +589,8 @@ namespace Coockie_Clicker
         private void BtnMineBonus_Click(object sender, RoutedEventArgs e)
         {
             double BonusPrijs = (double)MineClass.PrijsBonus;
+
+            UpdateIncome(0.47, MineClass.Teller, MineClass.Gekocht);
 
             MineClass.PrijsVerhogenBonus();
             MineClass.GekockteBonusMinea();
@@ -582,6 +604,7 @@ namespace Coockie_Clicker
             double Prijs = (double)FactoryClass.Prijs;
             double income = 2.60;
 
+            FactoryClass.Gekocht++;
             FactoryClass.PrijsVerhogen();
 
             stackpanelImage(SkpFactory, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Factory.png");
@@ -592,6 +615,8 @@ namespace Coockie_Clicker
         private void BtnFactoryBonus_Click(object sender, RoutedEventArgs e)
         {
             double BonusPrijs = (double)FactoryClass.PrijsBonus;
+
+            UpdateIncome(2.60, FactoryClass.Teller, FactoryClass.Gekocht);
 
             FactoryClass.PrijsVerhogenBonus();
             FactoryClass.GekockteBonusFactory();
@@ -605,6 +630,7 @@ namespace Coockie_Clicker
             double Prijs = (double)BankClass.Prijs;
             double income = 14;
 
+            BankClass.Gekocht++;
             BankClass.PrijsVerhogen();
 
             stackpanelImage(SkpBank, "");
@@ -615,6 +641,8 @@ namespace Coockie_Clicker
         private void BtnBankBonus_Click(object sender, RoutedEventArgs e)
         {
             double BonusPrijs = (double)BankClass.PrijsBonus;
+
+            UpdateIncome(14, BankClass.Teller, BankClass.Gekocht);
 
             BankClass.PrijsVerhogenBonus();
             BankClass.GekockteBonusBank();
@@ -628,6 +656,7 @@ namespace Coockie_Clicker
             double Prijs = (double)TempleClass.Prijs;
             double income = 78;
 
+            TempleClass.Gekocht++;
             TempleClass.PrijsVerhogen();
 
             stackpanelImage(SkpTemple, "");
@@ -635,9 +664,11 @@ namespace Coockie_Clicker
             UpdateLabelContent(Prijs, income);
         }
 
-        private void BtnTemplBonus_Click(object sender, RoutedEventArgs e)
+        private void BtnTempleBonus_Click(object sender, RoutedEventArgs e)
         {
             double BonusPrijs = (double)TempleClass.PrijsBonus;
+
+            UpdateIncome(78, BankClass.Teller, BankClass.Gekocht);
 
             TempleClass.PrijsVerhogenBonus();
             TempleClass.GekockteBonusTemple();
