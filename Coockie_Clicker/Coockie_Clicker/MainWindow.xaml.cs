@@ -1,6 +1,5 @@
 ﻿using Coockie_Clicker.Classes;
 using Coockie_Clicker.Models;
-using Coockie_Clicker.Achievements;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -31,8 +30,17 @@ namespace Coockie_Clicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        // Classes, Achievements
-        Coockie_Clicker.Achievements.Coockies_Clicked coockies_Clicked = new Coockie_Clicker.Achievements.Coockies_Clicked();
+        // Achievements Bools
+        bool Grandma_Gekocht_25 = false;
+        bool Grandma_Gekocht_100 = false;
+        bool Income_100 = false;
+        bool Cursor_Gekocht_10 = false;
+        bool Temple_Gekocht = false;
+        bool Cookies_Clicked_100 = false;
+        bool Cookies_Clicked_100000 = false;
+        bool Cookies_Clicked_1000000 = false;
+        bool Upgrades_Gekocht_100= false;
+        bool Farm_Gekocht_50 = false;
 
         // Classes, Models
         Models.Cursor CursorClass = new Models.Cursor();
@@ -123,12 +131,59 @@ namespace Coockie_Clicker
             }
         }
 
-        private void ControleerAchievements() //fixen
+        private void ControleerAchievements() // Werkt moet optimized worden
         {
+
             // achievements Coockie Clicked
-            if (Clicked == coockies_Clicked.RequiredCookies)
+            if (Clicked == 100 && !Cookies_Clicked_100)
             {
-                coockies_Clicked.IsUnlocked = true;
+                MessageBox.Show("Yippie je hebt de; Klik 100 keer op de cookie; Achievement");
+                Cookies_Clicked_100 = true;
+            }
+            if (Clicked == 100000 && !Cookies_Clicked_100000)
+            {
+                MessageBox.Show("Yippie je hebt de; Klik 100 000 keer op de cookie; Achievement");
+                Cookies_Clicked_100000 = true;
+            }
+            if (Clicked == 1000000 && !Cookies_Clicked_1000000)
+            {
+                MessageBox.Show("Yippie je hebt de; Klik 1 000 000 keer op de cookie; Achievement");
+                Cookies_Clicked_1000000 = true;
+            }
+            if(Bought == 100 && !Upgrades_Gekocht_100)
+            {
+                MessageBox.Show("Yippie je hebt de; Kloop 100 upgrades; Achievement");
+                Upgrades_Gekocht_100 = true;
+            }
+            if (Income == 100 && !Income_100)
+            {
+                MessageBox.Show("Yippie je hebt de; Je hebt een income van 100 behaalt; Achievement");
+                Income_100 = true;
+            }
+            if (GrandmaClass.Gekocht == 25 && !Grandma_Gekocht_25)
+            {
+                MessageBox.Show("Yippie je hebt de; Je hebt een 25 grandmas gekocht; Achievement");
+                Grandma_Gekocht_25 = true;
+            }
+            if (GrandmaClass.Gekocht == 100 && !Grandma_Gekocht_100)
+            {
+                MessageBox.Show("Yippie je hebt de; Je hebt een 100 grandmas gekocht; Achievement");
+                Grandma_Gekocht_100 = true;
+            }
+            if (TempleClass.Gekocht == 1 && !Temple_Gekocht)
+            {
+                MessageBox.Show("Yippie je hebt de; Je hebt een Temple gekocht; Achievement");
+                Temple_Gekocht = true;
+            }
+            if (CursorClass.Gekocht == 10 && !Cursor_Gekocht_10)
+            {
+                MessageBox.Show("Yippie je hebt de; Je hebt een 10 Cursors gekocht; Achievement");
+                Cursor_Gekocht_10 = true;
+            }
+            if (FarmClass.Gekocht == 100 && !Farm_Gekocht_50)
+            {
+                MessageBox.Show("Yippie je hebt de; Je hebt een 50 farms gekocht; Achievement");
+                Farm_Gekocht_50 = true;
             }
         }
 
@@ -441,7 +496,6 @@ namespace Coockie_Clicker
             Img.Height = 32;
             Img.Width = 37;
             stackPanel.Children.Add(Img);
-
         }
 
         private void Cookie_MouseDown(object sender, RoutedEventArgs e) // Werkt 
@@ -462,6 +516,7 @@ namespace Coockie_Clicker
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
             }
         }
+
         public void UpdateIncome(double income, double teller, double gekocht)
         {
             double nieuweIncome = teller * (gekocht * income);
@@ -682,6 +737,5 @@ namespace Coockie_Clicker
             Achievement achievements = new Achievement();
             achievements.Show();
         }
-
     }
 }

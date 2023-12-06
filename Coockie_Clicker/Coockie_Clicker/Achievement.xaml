@@ -18,98 +18,98 @@
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
-                    <TextBlock Text="Achievement Ontgrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                        <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
+                    <TextBlock Text="Koop 10 keer de Cursor; Goed begin met het spel :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel x:Name="skp_Cookie_Clicked" Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Coockie.png"  Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Klik 100 keer op de cookie; Lekker veel cookies :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Grandma.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Koop 25 keer Grandma: Das een heel grote femilie hier :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Coockie.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Krijg een passief inkomen van 100 cookies per seconden; Dat zijn pas veel cookies om te eten :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/temple.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Koop je eerste Temple; Goed Bezig :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Coockie.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Klik 100 000 Keer op een cookie; Al heel erg veel geclicked he :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Grandma.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement Overgrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Koop 100 grandmas: WOw de familie is nog groter :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Bank.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Koop 100 Upgrades; Wow Das is al heel veel geld weg :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Coockie.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Klik 1 000 000 op de cookie: WOW je vingers moeten echt pijn doen van het clicken" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Background="White" Margin="10">
                 <!-- Afbeelding -->
-                <Image  Width="50" Height="50" Margin="0,0,10,0" />
+                    <Image Source="img/Farm.png" Width="50" Height="50" Margin="0,0,10,0" />
 
                 <!-- Tekst en beschrijving -->
                 <StackPanel>
                         <TextBlock Text="Achievement vergrendeld" FontWeight="Bold" FontSize="16" />
-                    <TextBlock Text="Ey, dit is de achievement! Je hebt een geweldige prestatie bereikt." TextWrapping="Wrap" />
+                    <TextBlock Text="Koop 50 farms: Goed begin van je droom als farmer; Stardew Valley pov :3" TextWrapping="Wrap" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

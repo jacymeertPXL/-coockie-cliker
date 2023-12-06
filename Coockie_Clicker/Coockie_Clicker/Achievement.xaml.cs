@@ -1,5 +1,4 @@
-﻿using Coockie_Clicker.Achievements;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +20,6 @@ namespace Coockie_Clicker
     /// </summary>
     public partial class Achievement : Window
     {
-        // Classes, Achievements
-        Coockies_Clicked coockies_Clicked = new Coockies_Clicked();
-
         // Timer
         private DispatcherTimer timer;
 
@@ -48,11 +44,6 @@ namespace Coockie_Clicker
         }
         private void ControleerAchievements() 
         {
-            
-            if(coockies_Clicked.IsUnlocked == true)
-            {
-                skp_Cookie_Clicked.Background = new SolidColorBrush(Colors.LightCyan);
-            }
             
         }
     }

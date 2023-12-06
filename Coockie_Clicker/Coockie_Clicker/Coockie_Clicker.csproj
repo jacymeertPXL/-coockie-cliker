@@ -66,7 +66,6 @@
     <Compile Include="Achievement.xaml.cs">
       <DependentUpon>Achievement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Achievements\Coockies_Clicked.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -126,6 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\Golden_cookie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Temple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Achievements\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
