@@ -39,8 +39,9 @@ namespace Coockie_Clicker
         bool Cookies_Clicked_100 = false;
         bool Cookies_Clicked_100000 = false;
         bool Cookies_Clicked_1000000 = false;
-        bool Upgrades_Gekocht_100= false;
+        bool Upgrades_Gekocht_100 = false;
         bool Farm_Gekocht_50 = false;
+
 
         // Classes, Models
         Models.Cursor CursorClass = new Models.Cursor();
@@ -54,27 +55,29 @@ namespace Coockie_Clicker
         // Variable
         private double Score, Income, Clicked, Bought, Used;
 
+        // Timers
         /// <summary>
-        ///  Timer 10 mil sec voor layout updates en classes
-        ///  <para> Tekst </para>
+        /// Timer voor layout-updates en klassen.
         /// </summary>
         private DispatcherTimer timer;
+        /// <summary>
+        /// Timer voor het verschijnen van het gouden koekje.
+        /// </summary>
         private DispatcherTimer goldenCookieTimer;
 
-        public MainWindow() // Werkt is timing van 10 Milliseconden
+        public MainWindow()
         {
             InitializeComponent();
             ButtonHidden();
 
-            // Timer Tick Voor de Rest van het programma
+            // Timer Tick voor de rest van het programma
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(10);
 
             timer.Tick += Timer_Tick;
             timer.Start();
 
-
-            //Timer Tick Voor golden Coockie
+            // Timer Tick voor Golden Cookie
             goldenCookieTimer = new DispatcherTimer();
             goldenCookieTimer.Interval = TimeSpan.FromMinutes(1);
 
@@ -82,7 +85,7 @@ namespace Coockie_Clicker
             goldenCookieTimer.Start();
         }
 
-        private void ButtonHidden() // Werkt
+        private void ButtonHidden() 
         {
             // Normale Store Buttons
             BtnCursor.Visibility = Visibility.Hidden;
@@ -103,7 +106,7 @@ namespace Coockie_Clicker
             BtnBankBonus.Visibility = Visibility.Hidden;
         }
 
-        private void Timer_Tick(object sender, EventArgs e) // Werkt
+        private void Timer_Tick(object sender, EventArgs e) 
         {
             // gaat elke 10 miliseconden alles visual updaten van de client.
             UpdateCounterText();
@@ -126,7 +129,7 @@ namespace Coockie_Clicker
             UpdateButtonEnabledState(BtnTempleBonus, TempleClass.PrijsBonus);
         }
 
-        private void GoldenCookieTimer_Tick(object sender, EventArgs e) // Werkt
+        private void GoldenCookieTimer_Tick(object sender, EventArgs e) 
         {
             if (new Random().Next(100) < 30) // 30 procent kans
             {
@@ -134,7 +137,10 @@ namespace Coockie_Clicker
             }
         }
 
-        private void ControleerAchievements() // Werkt moet optimized worden
+        /// <summary>
+        /// Controleert en geeft achievements weer.
+        /// </summary>
+        private void ControleerAchievements() // Werkt moet optimized worden met classes?
         {
 
             // achievements Coockie Clicked
@@ -190,7 +196,7 @@ namespace Coockie_Clicker
             }
         }
 
-        private void ShowGoldenCookie() // Werkt
+        private void ShowGoldenCookie() 
         {
             // Code om een gouden koekje weer te geven
             double left = new Random().Next((int)ActualWidth);
@@ -217,7 +223,7 @@ namespace Coockie_Clicker
             Goldencookie.BeginAnimation(OpacityProperty, animation);
         }
 
-        private void Goldencookie_MouseDown(object sender, MouseButtonEventArgs e) // Werkt
+        private void Goldencookie_MouseDown(object sender, MouseButtonEventArgs e) 
         {
             double cookieValue = CalculateCookieValue();
 
@@ -225,7 +231,7 @@ namespace Coockie_Clicker
             cookie_Grid.Children.Remove(sender as UIElement); // delete golden cookie
         }
 
-        private double CalculateCookieValue() // Werkt
+        private double CalculateCookieValue() 
         {
             double Totaalincome = Convert.ToDouble(LbIncome.Content); // Huidige hoeveelheid
 
@@ -233,7 +239,7 @@ namespace Coockie_Clicker
             return TotaalincomeNa15Min;
         }
 
-        private void UpdateCounterText() // Werkt
+        private void UpdateCounterText()
         {
             if (Income >= 0)
             {
@@ -337,8 +343,12 @@ namespace Coockie_Clicker
 
             return $"{number:F3} {terms[index]}";
         }
-
-        private string FormaatGrootGetal_Prijs(double number) // Werkt
+        /// <summary>
+        /// Getallen boven 1000 worden Human Readable voor prijs
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        private string FormaatGrootGetal_Prijs(double number) 
         {
             // Human Readable voor alles boven 1000
             string[] terms = { "", "Duizend", "Miljoen", "Miljard", "Biljoen", "Biljard", "Triljoen" };
@@ -354,13 +364,13 @@ namespace Coockie_Clicker
             return $"{number:F1} {terms[index]}";
         }
 
-        private void UpdateButtonEnabledState(Button button, double Value) // Werkt
+        private void UpdateButtonEnabledState(Button button, double Value) 
         {
             // als de button clickable is voor de client op de juiste waarde 
             button.IsEnabled = Score >= Value;
         }
 
-        private void UpdateInvestmentButtonVisibility() // Werkt moet optimized worden
+        private void UpdateInvestmentButtonVisibility() 
         {
             double totalCookies = Score + Used;
 
@@ -417,7 +427,7 @@ namespace Coockie_Clicker
             }
         }
 
-        private void UpdateLabelContent(double Value, double income) // Werkt
+        private void UpdateLabelContent(double Value, double income) 
         {
             double newScore = Score - Value;
             if (newScore >= 0)
@@ -436,7 +446,7 @@ namespace Coockie_Clicker
             }
         }
 
-        private void UpdateLabelContent(double Value) // Werkt
+        private void UpdateLabelContent(double Value) 
         {
             double newScore = Score - Value;
             if (newScore >= 0)
@@ -454,7 +464,7 @@ namespace Coockie_Clicker
             }
         }
 
-        private void LbName_MouseDown(object sender, MouseButtonEventArgs e) // Werkt
+        private void LbName_MouseDown(object sender, MouseButtonEventArgs e) 
         {
             // gebruik maken van window maken functie
             string NieuweNaam = WijzigNaamCookieClicker.Show("Bakkerij Naam wijzigen", "Voer de nieuwe bakkerij naam in:");
@@ -470,7 +480,7 @@ namespace Coockie_Clicker
             }
         }
 
-        public static class WijzigNaamCookieClicker // Werkt
+        public static class WijzigNaamCookieClicker 
         {
             public static string Show(string title, string prompt)
             {
@@ -506,9 +516,8 @@ namespace Coockie_Clicker
             }
         }
 
-        public void stackpanelImage(StackPanel stackPanel, String imageSource) // fix dit de stackpanel helemaal opvult
+        private void stackpanelImage(StackPanel stackPanel, string imageSource) // Beter Maken
         {
-            // gaat de image ophalen en langs elkaar zetten met een set height en width.
             Image Img = new Image();
             Img.Source = new BitmapImage(new Uri(imageSource));
             Img.Height = 32;
@@ -516,7 +525,7 @@ namespace Coockie_Clicker
             stackPanel.Children.Add(Img);
         }
 
-        private void Cookie_MouseDown(object sender, RoutedEventArgs e) // Werkt 
+        private void Cookie_MouseDown(object sender, RoutedEventArgs e) 
         {
             Score++;
             Clicked++;
@@ -570,14 +579,14 @@ namespace Coockie_Clicker
             //Class_Button_Click(CursorClass, BtnCursor, 0.001);
 
             double Prijs = (double)CursorClass.Prijs;
-            double income = 0.001;
+            double Income = 0.001;
 
             CursorClass.Gekocht++;
             CursorClass.PrijsVerhogen();
 
             stackpanelImage(SkpCursor, "C:\\Users\\Gebruiker\\Documents\\GitHub\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Cursor.png");
             UpdateButtonEnabledState(BtnCursor, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
         }
 
         private void BtnCursorBonus_Click(object sender, RoutedEventArgs e)
@@ -597,14 +606,14 @@ namespace Coockie_Clicker
         {
 
             double Prijs = (double)GrandmaClass.Prijs;
-            double income = 0.01;
+            double Income = 0.01;
 
             GrandmaClass.Gekocht++;
             GrandmaClass.PrijsVerhogen();
 
             stackpanelImage(SkpGrandma, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Grandma.png");
             UpdateButtonEnabledState(BtnGrandma, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
         }
 
         private void BtnGrandmaBonus_Click(object sender, RoutedEventArgs e)
@@ -623,14 +632,14 @@ namespace Coockie_Clicker
         private void BtnFarm_Click(object sender, RoutedEventArgs e)
         {
             double Prijs = (double)FarmClass.Prijs;
-            double income = 0.08;
+            double Income = 0.08;
 
             FarmClass.Gekocht++;
             FarmClass.PrijsVerhogen();
 
             stackpanelImage(SkpFarm, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Farm.png");
             UpdateButtonEnabledState(BtnFactory, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
 
         }
 
@@ -649,14 +658,14 @@ namespace Coockie_Clicker
         private void BtnMine_Click(object sender, RoutedEventArgs e)
         {
             double Prijs = (double)MineClass.Prijs;
-            double income = 0.47;
+            double Income = 0.47;
 
             MineClass.Gekocht++;
             MineClass.PrijsVerhogen();
 
             stackpanelImage(SkpMine, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Mine.png");
             UpdateButtonEnabledState(BtnFarm, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
         }
 
         private void BtnMineBonus_Click(object sender, RoutedEventArgs e)
@@ -675,14 +684,14 @@ namespace Coockie_Clicker
         private void BtnFactory_Click(object sender, RoutedEventArgs e)
         {
             double Prijs = (double)FactoryClass.Prijs;
-            double income = 2.60;
+            double Income = 2.60;
 
             FactoryClass.Gekocht++;
             FactoryClass.PrijsVerhogen();
 
             stackpanelImage(SkpFactory, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Factory.png");
             UpdateButtonEnabledState(BtnMine, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
         }
 
         private void BtnFactoryBonus_Click(object sender, RoutedEventArgs e)
@@ -701,14 +710,14 @@ namespace Coockie_Clicker
         private void BtnBank_Click(object sender, RoutedEventArgs e)
         {
             double Prijs = (double)BankClass.Prijs;
-            double income = 14;
+            double Income = 14;
 
             BankClass.Gekocht++;
             BankClass.PrijsVerhogen();
 
             stackpanelImage(SkpBank, "");
             UpdateButtonEnabledState(BtnBank, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
         }
 
         private void BtnBankBonus_Click(object sender, RoutedEventArgs e)
@@ -727,14 +736,14 @@ namespace Coockie_Clicker
         private void BtnTemple_Click(object sender, RoutedEventArgs e)
         {
             double Prijs = (double)TempleClass.Prijs;
-            double income = 78;
+            double Income = 78;
 
             TempleClass.Gekocht++;
             TempleClass.PrijsVerhogen();
 
             stackpanelImage(SkpTemple, "");
             UpdateButtonEnabledState(BtnTemple, Prijs);
-            UpdateLabelContent(Prijs, income);
+            UpdateLabelContent(Prijs, Income);
         }
 
         private void BtnTempleBonus_Click(object sender, RoutedEventArgs e)
@@ -750,7 +759,7 @@ namespace Coockie_Clicker
             UpdateLabelContent(BonusPrijs);
         }
 
-        private void Btn_Achievements_Click(object sender, RoutedEventArgs e) // Werkt
+        private void Btn_Achievements_Click(object sender, RoutedEventArgs e)
         {
             Achievement achievements = new Achievement();
             achievements.Show();
