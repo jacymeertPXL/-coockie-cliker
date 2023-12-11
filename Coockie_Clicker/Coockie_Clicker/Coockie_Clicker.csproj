@@ -132,8 +132,6 @@
   <ItemGroup>
     <Resource Include="img\Temple.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Achievements\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

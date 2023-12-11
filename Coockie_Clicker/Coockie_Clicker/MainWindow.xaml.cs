@@ -54,7 +54,10 @@ namespace Coockie_Clicker
         // Variable
         private double Score, Income, Clicked, Bought, Used;
 
-        // Timer
+        /// <summary>
+        ///  Timer 10 mil sec voor layout updates en classes
+        ///  <para> Tekst </para>
+        /// </summary>
         private DispatcherTimer timer;
         private DispatcherTimer goldenCookieTimer;
 
@@ -243,7 +246,7 @@ namespace Coockie_Clicker
             }
         }
 
-        private void UpdateScoreText() // werkt
+        private void UpdateScoreText()
         {
             // Lables correct houden met de juiste format en 10 mil update
             // Labels Extras
@@ -281,7 +284,12 @@ namespace Coockie_Clicker
             LbTempelMulti.Content = TempleClass.Teller;
         }
 
-        private string FormaatLeesbaar_018_short(double number) // Werkt
+        /// <summary>
+        /// Numbers tussen 1000 en 10000 krijgen Human Readable voor short numbers
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        private string FormaatLeesbaar_018_short(double number) 
         {
             if (number < 1000 || number >= 1000000) // controleer als tussen deze waarden 
             {
@@ -293,7 +301,12 @@ namespace Coockie_Clicker
             return formattedNumber;
         }
 
-        private string FormaatLeesbaar_018(double number) // Werkt
+        /// <summary>
+        /// Numbers tussen 1000 en 10000 krijgen Human Readable.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        private string FormaatLeesbaar_018(double number) 
         {
             if (number < 1000 || number >= 1000000) // controleer als tussen deze waarden 
             {
@@ -305,7 +318,12 @@ namespace Coockie_Clicker
             return formattedNumber;
         }
 
-        private string FormaatGrootGetal(double number) // Werkt
+        /// <summary>
+        /// Getallen boven 1000 worden Human Readable.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        private string FormaatGrootGetal(double number) 
         {
             // Human Readable voor alles boven 1000
             string[] terms = { "", "Duizend", "Miljoen", "Miljard", "Biljoen", "Biljard", "Triljoen" };
