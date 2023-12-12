@@ -10,11 +10,16 @@
         <ImageBrush ImageSource="img/Wallpaper.jpg" />
     </Window.Background>
     <Grid Name="cookie_Grid" Margin="0,-2,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto" MinWidth="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
 
-        <Image Source="img/Coockie.png" MouseDown="Cookie_MouseDown" Margin="281,151,319,79"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto"  Margin="0,128,526,3" Grid.ColumnSpan="2">
-            <StackPanel Height="Auto" Width="Auto">
+        <Image MaxHeight="200" MaxWidth="200" Source="img/Coockie.png" MouseDown="Cookie_MouseDown" Margin="4,133,6,105" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto"  Margin="0,126,22,3">
+            <StackPanel Height="Auto" Width="Auto" MaxHeight="400">
 
                 <!-- Button 1: Cursor -->
                 <Button x:Name="BtnCursor" Height="60" Click="BtnCursor_Click" Background="#FF00EEF3" IsEnabled="False" FontStyle="Italic" FontWeight="Bold" FontSize="14">
@@ -140,7 +145,7 @@
         </ScrollViewer>
 
         <!-- Image Aantal gekocht -->
-        <StackPanel Orientation="Vertical" Margin="505,144,0,0">
+        <StackPanel Orientation="Vertical" Margin="11,144,0,0" Grid.Column="2">
             <StackPanel x:Name="SkpCursor" Orientation="Horizontal">
             </StackPanel>
             <StackPanel x:Name="SkpGrandma" Orientation="Horizontal">
@@ -156,19 +161,19 @@
             <StackPanel x:Name="SkpTemple" Orientation="Horizontal">
             </StackPanel>
         </StackPanel>
-        
+
         <!-- Labels -->
-        <Label x:Name="LbCoockie" Content="Cookies:" HorizontalAlignment="Left" Margin="282,31,0,0" VerticalAlignment="Top" Width="90" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False" Height="37"/>
-        <Label x:Name="LbCounter" Content="" HorizontalAlignment="Left" Margin="373,34,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F1}"/>
-        <Label x:Name="Lbshop" Content="Store / Bonus Store:" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Height="123" Width="243" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20" Grid.ColumnSpan="2"/>
-        <Label x:Name="LbIncome" Height="auto" Width="auto" Content="Pasive Income: " HorizontalAlignment="Left" Margin="288,83,0,0" VerticalAlignment="Top" Foreground="White" ContentStringFormat="{}{0:F3}"/>
-        <Label x:Name="LbClicked" Content="Cookies Clicked: " HorizontalAlignment="Left" Margin="492,9,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Height="34" Width="143"/>
-        <Label x:Name="LbUpgrades" Content="Upgrades Bought:" HorizontalAlignment="Left" Margin="638,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Height="34" Width="153"/>
-        <Label x:Name="LbUsed" Content="Cookies Spend:" HorizontalAlignment="Left" Margin="561,68,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Height="auto" Width="auto"/>
-        <Label x:Name="LbUsed_Text" Content="" HorizontalAlignment="Left" Margin="561,89,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" RenderTransformOrigin="0.5,0.5" ContentStringFormat="{}{0:F2}"/>
-        <Label x:Name="LbUpgrades_Text" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="643,41,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}"/>
-        <Label x:Name="LbClicked_Text" Height="auto" Width="auto" Content="" HorizontalAlignment="Left" Margin="494,43,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}"/>
-        <Label x:Name="LbName" Content="PXL-Bakery" HorizontalAlignment="Left" Margin="345,8,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" MouseDown="LbName_MouseDown" Height="34" Width="99" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LbCoockie" Content="Cookies:" HorizontalAlignment="Left" Margin="1,36,0,0" VerticalAlignment="Top" Width="auto" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False" Height="auto" Grid.Column="1"/>
+        <Label x:Name="LbCounter" Content="" HorizontalAlignment="Left" Margin="130,39,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F1}" Grid.Column="1" Height="auto" Width="auto"/>
+        <Label x:Name="Lbshop" Content="Store / Bonus Store:" HorizontalAlignment="Center" Margin="0,2,0,0" VerticalAlignment="Top" Height="123" Width="243" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20"/>
+        <Label x:Name="LbIncome" Content="Pasive Income: " HorizontalAlignment="Left" Margin="8,73,0,0" VerticalAlignment="Top" Foreground="White" ContentStringFormat="{}{0:F3}" Grid.Column="1"/>
+        <Label x:Name="LbClicked" Content="Cookies Clicked: " HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Height="auto" Width="auto" Grid.Column="2"/>
+        <Label x:Name="LbUpgrades" Content="Upgrades Bought:" HorizontalAlignment="Left" Margin="148,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Height="auto" Width="auto" Grid.Column="2"/>
+        <Label x:Name="LbUsed" Content="Cookies Spend:" HorizontalAlignment="Left" Margin="71,71,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Height="auto" Width="auto" Grid.Column="2"/>
+        <Label x:Name="LbUsed_Text" Content="" HorizontalAlignment="Left" Margin="71,92,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" RenderTransformOrigin="0.5,0.5" ContentStringFormat="{}{0:F2}" Grid.Column="2"/>
+        <Label x:Name="LbUpgrades_Text" Content="" HorizontalAlignment="Left" Margin="156,39,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}" Grid.Column="2"/>
+        <Label x:Name="LbClicked_Text" Content="" HorizontalAlignment="Left" Margin="16,44,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F0}" Grid.Column="2"/>
+        <Label x:Name="LbName" Content="PXL-Bakery" HorizontalAlignment="Left" Margin="43,9,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" MouseDown="LbName_MouseDown" Height="auto" Width="auto" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -178,6 +183,6 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="Btn_Achievements" Content="Achievements" HorizontalAlignment="Left" Margin="332,375,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.035,-0.015" Height="36" Width="95" Background="White" Click="Btn_Achievements_Click"/>
+        <Button x:Name="Btn_Achievements" Content="Achievements" HorizontalAlignment="Left" Margin="30,344,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.035,-0.015" Height="60" Width="152" Background="#FFFFD200" Click="Btn_Achievements_Click" Grid.Column="1" FontSize="18" FontFamily="Arial Black"/>
     </Grid>
 </Window>

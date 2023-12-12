@@ -204,7 +204,7 @@ namespace Coockie_Clicker
 
             // aanmaken van golden cookie
             Image Goldencookie = new Image
-            {
+            {   
                 Source = new BitmapImage(new Uri("/img/Golden_cookie.png", UriKind.Relative)),
                 Width = 20,
                 Height = 20,
