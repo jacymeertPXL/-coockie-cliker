@@ -205,7 +205,7 @@ namespace Coockie_Clicker
             // aanmaken van golden cookie
             Image Goldencookie = new Image
             {
-                Source = new BitmapImage(new Uri("C:\\Users\\Gebruiker\\Documents\\GitHub\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Golden_cookie.png")),
+                Source = new BitmapImage(new Uri("/img/Golden_cookie.png", UriKind.Relative)),
                 Width = 20,
                 Height = 20,
                 HorizontalAlignment = HorizontalAlignment.Left,
@@ -519,7 +519,7 @@ namespace Coockie_Clicker
         private void stackpanelImage(StackPanel stackPanel, string imageSource) // Beter Maken
         {
             Image Img = new Image();
-            Img.Source = new BitmapImage(new Uri(imageSource));
+            Img.Source = new BitmapImage(new Uri(imageSource, UriKind.Relative));
             Img.Height = 32;
             Img.Width = 37;
             stackPanel.Children.Add(Img);
@@ -584,7 +584,7 @@ namespace Coockie_Clicker
             CursorClass.Gekocht++;
             CursorClass.PrijsVerhogen();
 
-            stackpanelImage(SkpCursor, "C:\\Users\\Gebruiker\\Documents\\GitHub\\-coockie-cliker\\Coockie_Clicker\\Coockie_Clicker\\img\\Cursor.png");
+            stackpanelImage(SkpCursor, "/img/Cursor.png");
             UpdateButtonEnabledState(BtnCursor, Prijs);
             UpdateLabelContent(Prijs, Income);
         }
@@ -611,7 +611,7 @@ namespace Coockie_Clicker
             GrandmaClass.Gekocht++;
             GrandmaClass.PrijsVerhogen();
 
-            stackpanelImage(SkpGrandma, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Grandma.png");
+            stackpanelImage(SkpGrandma, "/img/Grandma.png");
             UpdateButtonEnabledState(BtnGrandma, Prijs);
             UpdateLabelContent(Prijs, Income);
         }
@@ -637,7 +637,7 @@ namespace Coockie_Clicker
             FarmClass.Gekocht++;
             FarmClass.PrijsVerhogen();
 
-            stackpanelImage(SkpFarm, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Farm.png");
+            stackpanelImage(SkpFarm, "/img/Farm.png");
             UpdateButtonEnabledState(BtnFactory, Prijs);
             UpdateLabelContent(Prijs, Income);
 
@@ -663,7 +663,7 @@ namespace Coockie_Clicker
             MineClass.Gekocht++;
             MineClass.PrijsVerhogen();
 
-            stackpanelImage(SkpMine, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Mine.png");
+            stackpanelImage(SkpMine, "/img/Mine.png");
             UpdateButtonEnabledState(BtnFarm, Prijs);
             UpdateLabelContent(Prijs, Income);
         }
@@ -689,7 +689,7 @@ namespace Coockie_Clicker
             FactoryClass.Gekocht++;
             FactoryClass.PrijsVerhogen();
 
-            stackpanelImage(SkpFactory, "C:\\Users\\12200178\\Desktop\\Computer Science\\Computer_Science\\Jaar_01\\Trimester_01\\Projecten\\Coockie_Clicker\\Coockie_Clicker\\img\\Factory.png");
+            stackpanelImage(SkpFactory, "/img/Factory.png");
             UpdateButtonEnabledState(BtnMine, Prijs);
             UpdateLabelContent(Prijs, Income);
         }
@@ -715,7 +715,7 @@ namespace Coockie_Clicker
             BankClass.Gekocht++;
             BankClass.PrijsVerhogen();
 
-            stackpanelImage(SkpBank, "");
+            stackpanelImage(SkpBank, "/img/Bank.png");
             UpdateButtonEnabledState(BtnBank, Prijs);
             UpdateLabelContent(Prijs, Income);
         }
@@ -741,7 +741,7 @@ namespace Coockie_Clicker
             TempleClass.Gekocht++;
             TempleClass.PrijsVerhogen();
 
-            stackpanelImage(SkpTemple, "");
+            stackpanelImage(SkpTemple, "/img/Temple.png");
             UpdateButtonEnabledState(BtnTemple, Prijs);
             UpdateLabelContent(Prijs, Income);
         }

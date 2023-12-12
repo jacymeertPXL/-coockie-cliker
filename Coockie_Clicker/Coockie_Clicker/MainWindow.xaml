@@ -4,12 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Coockie Clicker" Height="450" Width="800"
+        Title="Coockie Clicker" Height="450" Width="805"
 >
     <Window.Background>
         <ImageBrush ImageSource="img/Wallpaper.jpg" />
     </Window.Background>
-    <Grid Name="cookie_Grid">
+    <Grid Name="cookie_Grid" Margin="0,-2,0,0">
+
 
         <Image Source="img/Coockie.png" MouseDown="Cookie_MouseDown" Margin="281,151,319,79"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto"  Margin="0,128,526,3" Grid.ColumnSpan="2">
@@ -138,6 +139,7 @@
             </StackPanel>
         </ScrollViewer>
 
+        <!-- Image Aantal gekocht -->
         <StackPanel Orientation="Vertical" Margin="505,144,0,0">
             <StackPanel x:Name="SkpCursor" Orientation="Horizontal">
             </StackPanel>
@@ -154,7 +156,8 @@
             <StackPanel x:Name="SkpTemple" Orientation="Horizontal">
             </StackPanel>
         </StackPanel>
-
+        
+        <!-- Labels -->
         <Label x:Name="LbCoockie" Content="Cookies:" HorizontalAlignment="Left" Margin="282,31,0,0" VerticalAlignment="Top" Width="90" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False" Height="37"/>
         <Label x:Name="LbCounter" Content="" HorizontalAlignment="Left" Margin="373,34,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="18" ContentStringFormat="{}{0:F1}"/>
         <Label x:Name="Lbshop" Content="Store / Bonus Store:" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Height="123" Width="243" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="20" Grid.ColumnSpan="2"/>
